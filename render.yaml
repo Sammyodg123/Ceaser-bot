@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ceasermd-pairing
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      # shared secret - must match BOT_API_KEY in the Pterodactyl .env
+      - key: QUEUE_KEY
+        sync: false
